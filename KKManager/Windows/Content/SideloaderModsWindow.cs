@@ -37,8 +37,8 @@ namespace KKManager.Windows.Content
 
         private void ObjectListView1_FormatRow(object sender, FormatRowEventArgs e)
         {
-            var plug = (SideloaderModInfo)e.Model;
-            e.Item.ForeColor = plug.Enabled ? objectListView1.ForeColor : Color.Gray;
+            if (e.Model is SideloaderModInfo plug)
+                e.Item.ForeColor = plug.Enabled ? objectListView1.ForeColor : Color.Gray;
         }
 
         private void objectListView1_SelectedIndexChanged(object sender, EventArgs e)
